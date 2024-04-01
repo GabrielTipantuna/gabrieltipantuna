@@ -12,6 +12,11 @@ export default class SignInComponent {
 
   login(): void {
     localStorage.setItem('isAuthenticated', 'true');
+    this.validateAccessToMenu();
     this.router.navigateByUrl('/dashboard');
+  }
+
+  validateAccessToMenu(): void {
+    localStorage.setItem('canAccessToMenu', '0');
   }
 }
